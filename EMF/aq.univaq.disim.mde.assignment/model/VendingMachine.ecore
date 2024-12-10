@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="VendingMachine" nsURI="https://aq.univaq.disim.mde.assignment/VM"
+    nsPrefix="VM">
+  <eClassifiers xsi:type="ecore:EClass" name="Name" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Location">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lattitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="longitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HasOperation" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operations" lowerBound="1"
+        eType="#//StateOperations"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//ID">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expiry" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="group" eType="#//ItemGroup"
+        eOpposite="#//ItemGroup/Item"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ID" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Keypad" eSuperTypes="#//HasOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="input" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="#//State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PaymentProcessor" eSuperTypes="#//HasOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paymentMethod" lowerBound="1"
+        eType="#//PaymentMethod"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paymentAmount" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="#//State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemGroup" eSuperTypes="#//Name #//ID">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Quantity" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Price" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Item" lowerBound="1" upperBound="-1"
+        eType="#//Item" containment="true" eOpposite="#//Item/group"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stage" lowerBound="1" eType="#//States"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemProcessor" eSuperTypes="#//HasOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="#//State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inventory">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalCapacity" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastRestocked" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ItemGroup" lowerBound="1"
+        upperBound="-1" eType="#//ItemGroup" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VendingMachine" eSuperTypes="#//Name #//ID">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inventory" lowerBound="1"
+        eType="#//Inventory" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="#//State"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paymentProcessor" lowerBound="1"
+        eType="#//PaymentProcessor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="itemProcessor" lowerBound="1"
+        eType="#//ItemProcessor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keypad" lowerBound="1"
+        eType="#//Keypad" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="location" lowerBound="1"
+        eType="#//Location" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PaymentMethod">
+    <eLiterals name="Coin"/>
+    <eLiterals name="App" value="1"/>
+    <eLiterals name="NFC" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="States">
+    <eLiterals name="SELECT_ITEM"/>
+    <eLiterals name="WAIT_FOR_PAYMENT" value="1"/>
+    <eLiterals name="PROCESSING_PAYMENT" value="2"/>
+    <eLiterals name="PROCESSING_ITEM" value="3"/>
+    <eLiterals name="ITEM_DESPATCHED" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StateOperations">
+    <eLiterals name="SELECT_ITEM_collectCoin"/>
+    <eLiterals name="SELECT_ITEM_sendInput" value="1"/>
+    <eLiterals name="PROCESSING_ITEM_processItem" value="2"/>
+    <eLiterals name="ITEM_DISPATCHED_dispatchChange" value="3"/>
+    <eLiterals name="WIAT_FOR_PAYMENT_collectCoin" value="4"/>
+  </eClassifiers>
+</ecore:EPackage>

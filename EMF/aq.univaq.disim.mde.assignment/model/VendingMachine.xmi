@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VM:VendingMachine
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:VM="https://aq.univaq.disim.mde.assignment/VM"
+    xsi:schemaLocation="https://aq.univaq.disim.mde.assignment/VM /aq.univaq.disim.mde.assignment/model/VendingMachine.ecore"
+    name="Laquila"
+    id="1">
+  <inventory
+      totalCapacity="50"
+      lastRestocked="2024-12-01T00:00:00.000+0100">
+    <ItemGroup
+        name="Biscuit"
+        id="1"
+        Quantity="2"
+        Price="5.5"
+        Image="Biscuit.png">
+      <Item
+          id="1"
+          expiry="2024-12-01T00:00:00.000+0100"/>
+      <Item
+          id="2"
+          expiry="2024-12-01T00:00:00.000+0100"/>
+      <Item
+          id="3"
+          expiry="2024-12-01T00:00:00.000+0100"/>
+    </ItemGroup>
+    <ItemGroup
+        name="Coke"
+        id="2"
+        Quantity="10"
+        Price="2.2"
+        Image="Coke.png">
+      <Item
+          id="1"
+          expiry="2024-12-01T00:00:00.000+0100"/>
+      <Item
+          id="2"
+          expiry="2024-12-01T00:00:00.000+0100"/>
+    </ItemGroup>
+  </inventory>
+  <state stage="WAIT_FOR_PAYMENT"/>
+  <paymentProcessor
+      paymentAmount="10.5"
+      state="//@state"/>
+  <itemProcessor
+      state="//@state"/>
+  <keypad input="A"
+      state="//@state"/>
+  <location
+      lattitude="10.2323"
+      longitude="15.1223"
+      location="L'Aquila"/>
+</VM:VendingMachine>
