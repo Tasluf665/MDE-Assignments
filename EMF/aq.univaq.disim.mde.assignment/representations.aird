@@ -2,4 +2,5 @@
 <viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" uid="_uV2UILcnEe-334Xf3ei51A" version="15.4.1.202403191723">
   <semanticResources>model/VendingMachine.ecore</semanticResources>
   <semanticResources>model/VendingMachine.xmi</semanticResources>
+  <semanticResources>model/VendingMachine.genmodel</semanticResources>
 </viewpoint:DAnalysis>

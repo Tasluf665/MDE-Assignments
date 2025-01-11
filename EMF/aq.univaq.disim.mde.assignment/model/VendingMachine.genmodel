@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/aq.univaq.disim.mde.assignment/src" modelPluginID="aq.univaq.disim.mde.assignment"
+    modelName="VendingMachine" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>VendingMachine.ecore</foreignModel>
+  <genPackages prefix="VendingMachine" disposableProviderFactory="true" ecorePackage="VendingMachine.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="VendingMachine.ecore#//PaymentMethod">
+      <genEnumLiterals ecoreEnumLiteral="VendingMachine.ecore#//PaymentMethod/Coin"/>
+      <genEnumLiterals ecoreEnumLiteral="VendingMachine.ecore#//PaymentMethod/App"/>
+      <genEnumLiterals ecoreEnumLiteral="VendingMachine.ecore#//PaymentMethod/NFC"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="VendingMachine.ecore#//States">
+      <genEnumLiterals ecoreEnumLiteral="VendingMachine.ecore#//States/SELECT_ITEM"/>
+      <genEnumLiterals ecoreEnumLiteral="VendingMachine.ecore#//States/WAIT_FOR_PAYMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="VendingMachine.ecore#//States/PROCESSING_PAYMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="VendingMachine.ecore#//States/PROCESSING_ITEM"/>
+      <genEnumLiterals ecoreEnumLiteral="VendingMachine.ecore#//States/ITEM_DESPATCHED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="VendingMachine.ecore#//StateOperations">
+      <genEnumLiterals ecoreEnumLiteral="VendingMachine.ecore#//StateOperations/SELECT_ITEM_collectCoin"/>
+      <genEnumLiterals ecoreEnumLiteral="VendingMachine.ecore#//StateOperations/SELECT_ITEM_sendInput"/>
+      <genEnumLiterals ecoreEnumLiteral="VendingMachine.ecore#//StateOperations/PROCESSING_ITEM_processItem"/>
+      <genEnumLiterals ecoreEnumLiteral="VendingMachine.ecore#//StateOperations/ITEM_DISPATCHED_dispatchChange"/>
+      <genEnumLiterals ecoreEnumLiteral="VendingMachine.ecore#//StateOperations/WIAT_FOR_PAYMENT_collectCoin"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="VendingMachine.ecore#//Name">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//Name/name"/>
+    </genClasses>
+    <genClasses ecoreClass="VendingMachine.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//Location/lattitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//Location/longitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//Location/location"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="VendingMachine.ecore#//HasOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//HasOperation/operations"/>
+    </genClasses>
+    <genClasses ecoreClass="VendingMachine.ecore#//Item">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//Item/expiry"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference VendingMachine.ecore#//Item/group"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="VendingMachine.ecore#//ID">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//ID/id"/>
+    </genClasses>
+    <genClasses ecoreClass="VendingMachine.ecore#//Keypad">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//Keypad/input"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference VendingMachine.ecore#//Keypad/state"/>
+    </genClasses>
+    <genClasses ecoreClass="VendingMachine.ecore#//PaymentProcessor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//PaymentProcessor/paymentMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//PaymentProcessor/paymentAmount"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference VendingMachine.ecore#//PaymentProcessor/state"/>
+    </genClasses>
+    <genClasses ecoreClass="VendingMachine.ecore#//ItemGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//ItemGroup/Quantity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//ItemGroup/Price"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//ItemGroup/Image"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VendingMachine.ecore#//ItemGroup/Item"/>
+    </genClasses>
+    <genClasses ecoreClass="VendingMachine.ecore#//State">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//State/stage"/>
+    </genClasses>
+    <genClasses ecoreClass="VendingMachine.ecore#//ItemProcessor">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference VendingMachine.ecore#//ItemProcessor/state"/>
+    </genClasses>
+    <genClasses ecoreClass="VendingMachine.ecore#//Inventory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//Inventory/totalCapacity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//Inventory/lastRestocked"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VendingMachine.ecore#//Inventory/ItemGroup"/>
+    </genClasses>
+    <genClasses ecoreClass="VendingMachine.ecore#//VendingMachine">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VendingMachine.ecore#//VendingMachine/inventory"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VendingMachine.ecore#//VendingMachine/state"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VendingMachine.ecore#//VendingMachine/paymentProcessor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VendingMachine.ecore#//VendingMachine/itemProcessor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VendingMachine.ecore#//VendingMachine/keypad"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VendingMachine.ecore#//VendingMachine/location"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

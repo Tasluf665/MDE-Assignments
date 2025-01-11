@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: aq.univaq.disim.mde.assignment;singleton:=true
+Automatic-Module-Name: aq.univaq.disim.mde.assignment
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: VendingMachine,
+ VendingMachine.impl,
+ VendingMachine.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ aq.univaq.disim.mde.assignment
+Bundle-ActivationPolicy: lazy
