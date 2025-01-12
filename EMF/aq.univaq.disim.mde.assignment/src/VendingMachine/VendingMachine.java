@@ -24,9 +24,7 @@ package VendingMachine;
  * @model
  * @generated
  */
-public interface VendingMachine extends Name, ID {
-	Object impl = null;
-
+public interface VendingMachine extends Name, HasId {
 	/**
 	 * Returns the value of the '<em><b>Inventory</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

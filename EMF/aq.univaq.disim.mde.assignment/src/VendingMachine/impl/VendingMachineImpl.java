@@ -2,7 +2,7 @@
  */
 package VendingMachine.impl;
 
-import VendingMachine.ID;
+import VendingMachine.HasId;
 import VendingMachine.Inventory;
 import VendingMachine.ItemProcessor;
 import VendingMachine.Keypad;
@@ -581,9 +581,9 @@ public class VendingMachineImpl extends NameImpl implements VendingMachine {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == ID.class) {
+		if (baseClass == HasId.class) {
 			switch (derivedFeatureID) {
-				case VendingMachinePackage.VENDING_MACHINE__ID: return VendingMachinePackage.ID__ID;
+				case VendingMachinePackage.VENDING_MACHINE__ID: return VendingMachinePackage.HAS_ID__ID;
 				default: return -1;
 			}
 		}
@@ -597,9 +597,9 @@ public class VendingMachineImpl extends NameImpl implements VendingMachine {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == ID.class) {
+		if (baseClass == HasId.class) {
 			switch (baseFeatureID) {
-				case VendingMachinePackage.ID__ID: return VendingMachinePackage.VENDING_MACHINE__ID;
+				case VendingMachinePackage.HAS_ID__ID: return VendingMachinePackage.VENDING_MACHINE__ID;
 				default: return -1;
 			}
 		}

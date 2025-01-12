@@ -12,6 +12,5 @@ Export-Package: VendingMachine,
  VendingMachine.impl,
  VendingMachine.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
- aq.univaq.disim.mde.assignment
+ org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

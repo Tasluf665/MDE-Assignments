@@ -87,13 +87,13 @@ public class VendingMachineSwitch<T> extends Switch<T> {
 			case VendingMachinePackage.ITEM: {
 				Item item = (Item)theEObject;
 				T result = caseItem(item);
-				if (result == null) result = caseID(item);
+				if (result == null) result = caseHasId(item);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VendingMachinePackage.ID: {
-				ID id = (ID)theEObject;
-				T result = caseID(id);
+			case VendingMachinePackage.HAS_ID: {
+				HasId hasId = (HasId)theEObject;
+				T result = caseHasId(hasId);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -115,7 +115,7 @@ public class VendingMachineSwitch<T> extends Switch<T> {
 				ItemGroup itemGroup = (ItemGroup)theEObject;
 				T result = caseItemGroup(itemGroup);
 				if (result == null) result = caseName(itemGroup);
-				if (result == null) result = caseID(itemGroup);
+				if (result == null) result = caseHasId(itemGroup);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -142,7 +142,7 @@ public class VendingMachineSwitch<T> extends Switch<T> {
 				VendingMachine vendingMachine = (VendingMachine)theEObject;
 				T result = caseVendingMachine(vendingMachine);
 				if (result == null) result = caseName(vendingMachine);
-				if (result == null) result = caseID(vendingMachine);
+				if (result == null) result = caseHasId(vendingMachine);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -211,17 +211,17 @@ public class VendingMachineSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>ID</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Has Id</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>ID</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Has Id</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseID(ID object) {
+	public T caseHasId(HasId object) {
 		return null;
 	}
 

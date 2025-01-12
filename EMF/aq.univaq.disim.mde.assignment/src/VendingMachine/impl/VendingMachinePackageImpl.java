@@ -2,6 +2,7 @@
  */
 package VendingMachine.impl;
 
+import VendingMachine.HasId;
 import VendingMachine.HasOperation;
 import VendingMachine.Inventory;
 import VendingMachine.Item;
@@ -67,7 +68,7 @@ public class VendingMachinePackageImpl extends EPackageImpl implements VendingMa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass idEClass = null;
+	private EClass hasIdEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -315,8 +316,8 @@ public class VendingMachinePackageImpl extends EPackageImpl implements VendingMa
 	 * @generated
 	 */
 	@Override
-	public EClass getID() {
-		return idEClass;
+	public EClass getHasId() {
+		return hasIdEClass;
 	}
 
 	/**
@@ -325,8 +326,8 @@ public class VendingMachinePackageImpl extends EPackageImpl implements VendingMa
 	 * @generated
 	 */
 	@Override
-	public EAttribute getID_Id() {
-		return (EAttribute)idEClass.getEStructuralFeatures().get(0);
+	public EAttribute getHasId_Id() {
+		return (EAttribute)hasIdEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -673,8 +674,8 @@ public class VendingMachinePackageImpl extends EPackageImpl implements VendingMa
 		createEAttribute(itemEClass, ITEM__EXPIRY);
 		createEReference(itemEClass, ITEM__GROUP);
 
-		idEClass = createEClass(ID);
-		createEAttribute(idEClass, ID__ID);
+		hasIdEClass = createEClass(HAS_ID);
+		createEAttribute(hasIdEClass, HAS_ID__ID);
 
 		keypadEClass = createEClass(KEYPAD);
 		createEAttribute(keypadEClass, KEYPAD__INPUT);
@@ -744,14 +745,14 @@ public class VendingMachinePackageImpl extends EPackageImpl implements VendingMa
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		itemEClass.getESuperTypes().add(this.getID());
+		itemEClass.getESuperTypes().add(this.getHasId());
 		keypadEClass.getESuperTypes().add(this.getHasOperation());
 		paymentProcessorEClass.getESuperTypes().add(this.getHasOperation());
 		itemGroupEClass.getESuperTypes().add(this.getName_());
-		itemGroupEClass.getESuperTypes().add(this.getID());
+		itemGroupEClass.getESuperTypes().add(this.getHasId());
 		itemProcessorEClass.getESuperTypes().add(this.getHasOperation());
 		vendingMachineEClass.getESuperTypes().add(this.getName_());
-		vendingMachineEClass.getESuperTypes().add(this.getID());
+		vendingMachineEClass.getESuperTypes().add(this.getHasId());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(nameEClass, Name.class, "Name", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -769,8 +770,8 @@ public class VendingMachinePackageImpl extends EPackageImpl implements VendingMa
 		initEAttribute(getItem_Expiry(), ecorePackage.getEDate(), "expiry", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getItem_Group(), this.getItemGroup(), this.getItemGroup_Item(), "group", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(idEClass, VendingMachine.ID.class, "ID", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getID_Id(), ecorePackage.getEInt(), "id", null, 1, 1, VendingMachine.ID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(hasIdEClass, HasId.class, "HasId", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getHasId_Id(), ecorePackage.getEInt(), "id", null, 1, 1, HasId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(keypadEClass, Keypad.class, "Keypad", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getKeypad_Input(), ecorePackage.getEString(), "input", null, 1, 1, Keypad.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

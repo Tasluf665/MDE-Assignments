@@ -40,8 +40,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//Item/expiry"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference VendingMachine.ecore#//Item/group"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="VendingMachine.ecore#//ID">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//ID/id"/>
+    <genClasses image="false" ecoreClass="VendingMachine.ecore#//HasId">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//HasId/id"/>
     </genClasses>
     <genClasses ecoreClass="VendingMachine.ecore#//Keypad">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VendingMachine.ecore#//Keypad/input"/>

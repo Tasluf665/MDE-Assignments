@@ -64,9 +64,9 @@ public class VendingMachineItemProvider extends NameItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ID_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ID_id_feature", "_UI_ID_type"),
-				 VendingMachinePackage.Literals.ID__ID,
+				 getString("_UI_HasId_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HasId_id_feature", "_UI_HasId_type"),
+				 VendingMachinePackage.Literals.HAS_ID__ID,
 				 true,
 				 false,
 				 false,

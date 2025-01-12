@@ -84,8 +84,8 @@ public class VendingMachineAdapterFactory extends AdapterFactoryImpl {
 				return createItemAdapter();
 			}
 			@Override
-			public Adapter caseID(ID object) {
-				return createIDAdapter();
+			public Adapter caseHasId(HasId object) {
+				return createHasIdAdapter();
 			}
 			@Override
 			public Adapter caseKeypad(Keypad object) {
@@ -192,16 +192,16 @@ public class VendingMachineAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link VendingMachine.ID <em>ID</em>}'.
+	 * Creates a new adapter for an object of class '{@link VendingMachine.HasId <em>Has Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see VendingMachine.ID
+	 * @see VendingMachine.HasId
 	 * @generated
 	 */
-	public Adapter createIDAdapter() {
+	public Adapter createHasIdAdapter() {
 		return null;
 	}
 

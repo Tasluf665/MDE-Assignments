@@ -21,7 +21,7 @@ import java.util.Date;
  * @model
  * @generated
  */
-public interface Item extends ID {
+public interface Item extends HasId {
 	/**
 	 * Returns the value of the '<em><b>Expiry</b></em>' attribute.
 	 * <!-- begin-user-doc -->

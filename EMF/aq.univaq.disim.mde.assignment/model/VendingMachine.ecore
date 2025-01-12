@@ -15,13 +15,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operations" lowerBound="1"
         eType="#//StateOperations"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//ID">
+  <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//HasId">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expiry" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="group" eType="#//ItemGroup"
         eOpposite="#//ItemGroup/Item"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ID" abstract="true" interface="true">
+  <eClassifiers xsi:type="ecore:EClass" name="HasId" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Keypad" eSuperTypes="#//HasOperation">
@@ -35,7 +35,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="#//State"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemGroup" eSuperTypes="#//Name #//ID">
+  <eClassifiers xsi:type="ecore:EClass" name="ItemGroup" eSuperTypes="#//Name #//HasId">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Quantity" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Price" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
@@ -57,7 +57,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ItemGroup" lowerBound="1"
         upperBound="-1" eType="#//ItemGroup" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VendingMachine" eSuperTypes="#//Name #//ID">
+  <eClassifiers xsi:type="ecore:EClass" name="VendingMachine" eSuperTypes="#//Name #//HasId">
     <eStructuralFeatures xsi:type="ecore:EReference" name="inventory" lowerBound="1"
         eType="#//Inventory" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="#//State"

@@ -2,7 +2,7 @@
  */
 package VendingMachine.impl;
 
-import VendingMachine.ID;
+import VendingMachine.HasId;
 import VendingMachine.Item;
 import VendingMachine.ItemGroup;
 import VendingMachine.VendingMachinePackage;
@@ -390,9 +390,9 @@ public class ItemGroupImpl extends NameImpl implements ItemGroup {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == ID.class) {
+		if (baseClass == HasId.class) {
 			switch (derivedFeatureID) {
-				case VendingMachinePackage.ITEM_GROUP__ID: return VendingMachinePackage.ID__ID;
+				case VendingMachinePackage.ITEM_GROUP__ID: return VendingMachinePackage.HAS_ID__ID;
 				default: return -1;
 			}
 		}
@@ -406,9 +406,9 @@ public class ItemGroupImpl extends NameImpl implements ItemGroup {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == ID.class) {
+		if (baseClass == HasId.class) {
 			switch (baseFeatureID) {
-				case VendingMachinePackage.ID__ID: return VendingMachinePackage.ITEM_GROUP__ID;
+				case VendingMachinePackage.HAS_ID__ID: return VendingMachinePackage.ITEM_GROUP__ID;
 				default: return -1;
 			}
 		}

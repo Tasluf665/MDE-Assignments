@@ -3,6 +3,7 @@
 package VendingMachine;
 
 import org.eclipse.emf.ecore.EFactory;
+import VendingMachine.impl.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +20,7 @@ public interface VendingMachineFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	VendingMachineFactory eINSTANCE = VendingMachine.impl.VendingMachineFactoryImpl.init();
+	VendingMachineFactory eINSTANCE = VendingMachineFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Location</em>'.

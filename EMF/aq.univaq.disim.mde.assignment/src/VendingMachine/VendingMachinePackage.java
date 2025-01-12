@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import VendingMachine.impl.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -55,7 +56,7 @@ public interface VendingMachinePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	VendingMachinePackage eINSTANCE = VendingMachine.impl.VendingMachinePackageImpl.init();
+	VendingMachinePackage eINSTANCE = VendingMachinePackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link VendingMachine.impl.NameImpl <em>Name</em>}' class.
@@ -187,14 +188,14 @@ public interface VendingMachinePackage extends EPackage {
 	int HAS_OPERATION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link VendingMachine.ID <em>ID</em>}' class.
+	 * The meta object id for the '{@link VendingMachine.HasId <em>Has Id</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see VendingMachine.ID
-	 * @see VendingMachine.impl.VendingMachinePackageImpl#getID()
+	 * @see VendingMachine.HasId
+	 * @see VendingMachine.impl.VendingMachinePackageImpl#getHasId()
 	 * @generated
 	 */
-	int ID = 4;
+	int HAS_ID = 4;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -203,25 +204,25 @@ public interface VendingMachinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ID__ID = 0;
+	int HAS_ID__ID = 0;
 
 	/**
-	 * The number of structural features of the '<em>ID</em>' class.
+	 * The number of structural features of the '<em>Has Id</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ID_FEATURE_COUNT = 1;
+	int HAS_ID_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>ID</em>' class.
+	 * The number of operations of the '<em>Has Id</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ID_OPERATION_COUNT = 0;
+	int HAS_ID_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link VendingMachine.impl.ItemImpl <em>Item</em>}' class.
@@ -240,7 +241,7 @@ public interface VendingMachinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITEM__ID = ID__ID;
+	int ITEM__ID = HAS_ID__ID;
 
 	/**
 	 * The feature id for the '<em><b>Expiry</b></em>' attribute.
@@ -249,7 +250,7 @@ public interface VendingMachinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITEM__EXPIRY = ID_FEATURE_COUNT + 0;
+	int ITEM__EXPIRY = HAS_ID_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Group</b></em>' container reference.
@@ -258,7 +259,7 @@ public interface VendingMachinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITEM__GROUP = ID_FEATURE_COUNT + 1;
+	int ITEM__GROUP = HAS_ID_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Item</em>' class.
@@ -267,7 +268,7 @@ public interface VendingMachinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITEM_FEATURE_COUNT = ID_FEATURE_COUNT + 2;
+	int ITEM_FEATURE_COUNT = HAS_ID_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Item</em>' class.
@@ -276,7 +277,7 @@ public interface VendingMachinePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITEM_OPERATION_COUNT = ID_OPERATION_COUNT + 0;
+	int ITEM_OPERATION_COUNT = HAS_ID_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link VendingMachine.impl.KeypadImpl <em>Keypad</em>}' class.
@@ -866,25 +867,25 @@ public interface VendingMachinePackage extends EPackage {
 	EReference getItem_Group();
 
 	/**
-	 * Returns the meta object for class '{@link VendingMachine.ID <em>ID</em>}'.
+	 * Returns the meta object for class '{@link VendingMachine.HasId <em>Has Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>ID</em>'.
-	 * @see VendingMachine.ID
+	 * @return the meta object for class '<em>Has Id</em>'.
+	 * @see VendingMachine.HasId
 	 * @generated
 	 */
-	EClass getID();
+	EClass getHasId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link VendingMachine.ID#getId <em>Id</em>}'.
+	 * Returns the meta object for the attribute '{@link VendingMachine.HasId#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see VendingMachine.ID#getId()
-	 * @see #getID()
+	 * @see VendingMachine.HasId#getId()
+	 * @see #getHasId()
 	 * @generated
 	 */
-	EAttribute getID_Id();
+	EAttribute getHasId_Id();
 
 	/**
 	 * Returns the meta object for class '{@link VendingMachine.Keypad <em>Keypad</em>}'.
@@ -1326,14 +1327,14 @@ public interface VendingMachinePackage extends EPackage {
 		EReference ITEM__GROUP = eINSTANCE.getItem_Group();
 
 		/**
-		 * The meta object literal for the '{@link VendingMachine.ID <em>ID</em>}' class.
+		 * The meta object literal for the '{@link VendingMachine.HasId <em>Has Id</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see VendingMachine.ID
-		 * @see VendingMachine.impl.VendingMachinePackageImpl#getID()
+		 * @see VendingMachine.HasId
+		 * @see VendingMachine.impl.VendingMachinePackageImpl#getHasId()
 		 * @generated
 		 */
-		EClass ID = eINSTANCE.getID();
+		EClass HAS_ID = eINSTANCE.getHasId();
 
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
@@ -1341,7 +1342,7 @@ public interface VendingMachinePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ID__ID = eINSTANCE.getID_Id();
+		EAttribute HAS_ID__ID = eINSTANCE.getHasId_Id();
 
 		/**
 		 * The meta object literal for the '{@link VendingMachine.impl.KeypadImpl <em>Keypad</em>}' class.
